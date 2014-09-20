@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		930F9D5119CD38B200CA9D12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E3B19CD1A30000FF2B3 /* AppDelegate.m */; };
-		930F9D5219CD38B200CA9D12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E6219CD1AC9000FF2B3 /* ViewController.m */; };
+		930F9D5219CD38B200CA9D12 /* TruthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */; };
 		930F9D5419CD38B200CA9D12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E3819CD1A30000FF2B3 /* main.m */; };
 		930F9D5719CD397C00CA9D12 /* TruthTable.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930F9D5619CD397C00CA9D12 /* TruthTable.mm */; };
 		93679E4419CD1A30000FF2B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93679E4319CD1A30000FF2B3 /* Images.xcassets */; };
@@ -42,8 +42,8 @@
 		93679E5219CD1A30000FF2B3 /* TruthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TruthTests.m; sourceTree = "<group>"; };
 		93679E5E19CD1A55000FF2B3 /* BinaryExpressionTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryExpressionTree.h; sourceTree = "<group>"; };
 		93679E5F19CD1AA8000FF2B3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		93679E6119CD1AC9000FF2B3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		93679E6219CD1AC9000FF2B3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		93679E6119CD1AC9000FF2B3 /* TruthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TruthTableViewController.h; sourceTree = "<group>"; };
+		93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TruthTableViewController.m; sourceTree = "<group>"; };
 		93B29A1719CD25E400E27544 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		93B29A1819CD25E400E27544 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		93B29A1C19CD261500E27544 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
@@ -80,10 +80,17 @@
 		930F9D5919CD5DAF00CA9D12 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				93679E6119CD1AC9000FF2B3 /* ViewController.h */,
-				93679E6219CD1AC9000FF2B3 /* ViewController.m */,
+				93679E6119CD1AC9000FF2B3 /* TruthTableViewController.h */,
+				93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9343000219CD69E80046243F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		93679E2A19CD1A30000FF2B3 = {
@@ -110,6 +117,7 @@
 				93679E3A19CD1A30000FF2B3 /* AppDelegate.h */,
 				93679E3B19CD1A30000FF2B3 /* AppDelegate.m */,
 				93679E5F19CD1AA8000FF2B3 /* Main.storyboard */,
+				9343000219CD69E80046243F /* Views */,
 				930F9D5919CD5DAF00CA9D12 /* Controllers */,
 				930F9D5819CD3A6800CA9D12 /* Objective-C++ */,
 				93B29A1B19CD25FD00E27544 /* C++ */,
@@ -149,11 +157,11 @@
 		93B29A1B19CD25FD00E27544 /* C++ */ = {
 			isa = PBXGroup;
 			children = (
-				93679E5E19CD1A55000FF2B3 /* BinaryExpressionTree.h */,
 				93B29A1719CD25E400E27544 /* Node.h */,
 				93B29A1819CD25E400E27544 /* Expression.h */,
 				93B29A1D19CD273A00E27544 /* Operator.h */,
 				93B29A1C19CD261500E27544 /* BinaryTree.h */,
+				93679E5E19CD1A55000FF2B3 /* BinaryExpressionTree.h */,
 			);
 			name = "C++";
 			sourceTree = "<group>";
@@ -259,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				930F9D5119CD38B200CA9D12 /* AppDelegate.m in Sources */,
-				930F9D5219CD38B200CA9D12 /* ViewController.m in Sources */,
+				930F9D5219CD38B200CA9D12 /* TruthTableViewController.m in Sources */,
 				930F9D5719CD397C00CA9D12 /* TruthTable.mm in Sources */,
 				930F9D5419CD38B200CA9D12 /* main.m in Sources */,
 			);

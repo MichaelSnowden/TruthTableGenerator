@@ -11,6 +11,5 @@
 @interface TruthTable : NSObject
 
 - (id)initWithString:(NSString *)s;
-- (NSArray *)subexpressions;
 
 @end

@@ -26,33 +26,6 @@ public:
     Node<T> *parent = NULL;
     Node<T> *llink  = NULL;
     Node<T> *rlink  = NULL;
-    void preOrder(function<void (Node<T>)> lambda) {
-        lambda(this);
-        if (llink != NULL) {
-            llink->inOrder(lambda);
-        }
-        if (rlink != NULL) {
-            rlink->inOrder(lambda);
-        }
-    }
-    void inOrder(function<void (Node<T>)> lambda) {
-        if (llink != NULL) {
-            llink->inOrder(lambda);
-        }
-        lambda(this);
-        if (rlink != NULL) {
-            rlink->inOrder(lambda);
-        }
-    }
-    void postOrder(function<void (Node<T>)> lambda) {
-        if (llink != NULL) {
-            llink->inOrder(lambda);
-        }
-        if (rlink != NULL) {
-            rlink->inOrder(lambda);
-        }
-        lambda(this);
-    }
     Node<T> *getRoot() {
         auto mover = this;
         while (mover->parent != NULL) {

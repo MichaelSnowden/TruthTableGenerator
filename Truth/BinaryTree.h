@@ -20,7 +20,6 @@ public:
     BinaryTree(Node<T> *p_root) : root(p_root) {}
     
     Node<T> *root = NULL;
-    void inOrder(function<void (Node<T>)> lambda);
 };
 
 

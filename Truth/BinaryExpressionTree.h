@@ -13,20 +13,34 @@
 #include <algorithm>
 #include <vector>
 #include <stack>
-#include <assert.h>
 #include <string>
 #include <map>
 #include <functional>
+#include <exception>
+
 #include "Expression.h"
 #include "BinaryTree.h"
 #include "Operator.h"
 
 using namespace std;
 
-class BinaryExpressionTree : public BinaryTree<Expression *> {
+bool isoperand(string s) {
+    return isalpha(s[0]) || isdigit(s[0]);
+}
+
+bool isoperator(string s) {
+    return operatorMap.find(s) != operatorMap.end(); 
+}
+
+class BinaryExpressionTreeException : public runtime_error {
 public:
-    BinaryExpressionTree() : BinaryTree<Expression *>() {}
-    BinaryExpressionTree(string s) : BinaryTree<Expression *>() {
+    BinaryExpressionTreeException(const string &s) : runtime_error(s) {}
+};
+
+class BinaryExpressionTree : public BinaryTree<string> {
+public:
+    BinaryExpressionTree() : BinaryTree<string>() {}
+    BinaryExpressionTree(string s) : BinaryTree<string>() {
         // Tokenize everything
         vector<string> tokens;
         
@@ -42,22 +56,17 @@ public:
             tokens.push_back(string(1, token));
         }
         
-        // Parse it
+        // Build the tree from the tokens
         auto expression = tokens;
-        cout << "Original expression: " << endl;
-        copy(expression.begin(), expression.end(), ostream_iterator<string>(cout, " "));
-        cout << endl;
         
         stack<string> operators;
         stack<Expression *> operands;
         subexpressions.clear();
         
-        auto isoperand  = [](string s) { return isalpha(s[0]) || isdigit(s[0]); };
-        auto isoperator = [](string s) { return operatorMap.find(s) != operatorMap.end(); };
         auto operator2comesfirst = [](Operator op1, Operator op2) {
             return (op2.precedence == op1.precedence && op1.associativity == LeftRight) || op2.precedence < op1.precedence;
         };
-        auto eatoperator = [&]( function<void (string subexpression)> handleSubexpression) {
+        auto eatoperator = [&]() {
             
             auto op = Operator(operators.top());
             auto expression = new Expression(operators.top());
@@ -65,7 +74,9 @@ public:
             
             switch (op.arity) {
                 case Unary: {
-                    assert(operands.size() >= 1);
+                    if (operands.size() < 1) {
+                        throw BinaryExpressionTreeException("Invalid syntax");
+                    }
                     auto operand = operands.top();
                     operands.pop();
                     
@@ -78,11 +89,14 @@ public:
                             expression->rlink = operand;
                             break;
                     }
+                    expression->isUnary = true;
                     operand->parent = expression;
                     break;
                 }
                 case Binary: {
-                    assert(operands.size() >= 2);
+                    if (operands.size() < 2) {
+                        throw BinaryExpressionTreeException("Invalid syntax");
+                    }
                     
                     auto operand1 = operands.top();
                     operands.pop();
@@ -97,9 +111,8 @@ public:
                     break;
                 }
             }
+            subexpressions.push_back(expression);
             string subexpression = expression->express();
-            subexpressions.push_back(subexpression);
-            handleSubexpression(expression->express());
             operands.push(expression);
         };
         
@@ -120,7 +133,7 @@ public:
                     
                     if (operator2comesfirst(op1, op2)) {
                         
-                        eatoperator( [](string subexpression) -> void { cout << "sub: " << subexpression << endl; });
+                        eatoperator();
                         
                     } else {
                         break;
@@ -134,24 +147,26 @@ public:
             }
             else if (token[0] == ')') {
                 while (!operators.empty() && operators.top() != "(") {
-                    eatoperator( [&operators](string subexpression) -> void { cout <<  "sub: "  << subexpression << endl; });
+                    eatoperator();
                 }
                 operands.top()->isParenthesized = true;
                 operators.pop();
             }
             else {
-                cout << "Fucked: " << token << endl;
-                assert(0);
+                string s = "Invalid symbol: ";
+                s.append(token);
+                throw BinaryExpressionTreeException(s);
             }
         }
         
         while (!operators.empty()) {
-            eatoperator( [](string subexpression) -> void { cout << "sub: " << subexpression << endl; });
+            eatoperator();
         }
         
-        cout << "Expression tree: " << endl;
+        root = operands.top();
     }
-    vector<string> subexpressions;
+    
+    vector<Expression *> subexpressions;
 };
 
 #endif

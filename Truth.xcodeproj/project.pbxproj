@@ -15,6 +15,16 @@
 		93679E4719CD1A30000FF2B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93679E4519CD1A30000FF2B3 /* LaunchScreen.xib */; };
 		93679E5319CD1A30000FF2B3 /* TruthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E5219CD1A30000FF2B3 /* TruthTests.m */; };
 		93679E6019CD1AA8000FF2B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93679E5F19CD1AA8000FF2B3 /* Main.storyboard */; };
+		937E42AD19CE1AD600F69DB9 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937E42AC19CE1AD600F69DB9 /* QuickLook.framework */; };
+		937E42B819CE325100F69DB9 /* TruthTableInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937E42B719CE325100F69DB9 /* TruthTableInputAccessoryView.xib */; };
+		937E42BB19CE741F00F69DB9 /* UITextField+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42BA19CE741F00F69DB9 /* UITextField+Shake.m */; };
+		937E42BE19CE7ACD00F69DB9 /* UITextField+Cursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42BD19CE7ACD00F69DB9 /* UITextField+Cursor.m */; };
+		937E42C119CE7F0000F69DB9 /* TruthTableInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42C019CE7F0000F69DB9 /* TruthTableInputAccessoryView.m */; };
+		937E42C519CE8B8600F69DB9 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42C419CE8B8600F69DB9 /* Preferences.m */; };
+		937E42C819CE94E400F69DB9 /* PreferencesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42C719CE94E400F69DB9 /* PreferencesTableViewController.m */; };
+		937E42CB19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42CA19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m */; };
+		937E42CD19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937E42CC19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib */; };
+		937E42D019CEA17100F69DB9 /* PreferencesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42CF19CEA17100F69DB9 /* PreferencesTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,23 @@
 		93679E5F19CD1AA8000FF2B3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		93679E6119CD1AC9000FF2B3 /* TruthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TruthTableViewController.h; sourceTree = "<group>"; };
 		93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TruthTableViewController.m; sourceTree = "<group>"; };
+		937E42AC19CE1AD600F69DB9 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		937E42B719CE325100F69DB9 /* TruthTableInputAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TruthTableInputAccessoryView.xib; sourceTree = "<group>"; };
+		937E42B919CE741F00F69DB9 /* UITextField+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Shake.h"; sourceTree = "<group>"; };
+		937E42BA19CE741F00F69DB9 /* UITextField+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Shake.m"; sourceTree = "<group>"; };
+		937E42BC19CE7ACD00F69DB9 /* UITextField+Cursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Cursor.h"; sourceTree = "<group>"; };
+		937E42BD19CE7ACD00F69DB9 /* UITextField+Cursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Cursor.m"; sourceTree = "<group>"; };
+		937E42BF19CE7F0000F69DB9 /* TruthTableInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TruthTableInputAccessoryView.h; sourceTree = "<group>"; };
+		937E42C019CE7F0000F69DB9 /* TruthTableInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TruthTableInputAccessoryView.m; sourceTree = "<group>"; };
+		937E42C319CE8B8600F69DB9 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		937E42C419CE8B8600F69DB9 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		937E42C619CE94E400F69DB9 /* PreferencesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesTableViewController.h; sourceTree = "<group>"; };
+		937E42C719CE94E400F69DB9 /* PreferencesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTableViewController.m; sourceTree = "<group>"; };
+		937E42C919CE964E00F69DB9 /* UISegmentedControl+SetSegments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+SetSegments.h"; sourceTree = "<group>"; };
+		937E42CA19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+SetSegments.m"; sourceTree = "<group>"; };
+		937E42CC19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesTableViewCell.xib; sourceTree = "<group>"; };
+		937E42CE19CEA17100F69DB9 /* PreferencesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesTableViewCell.h; sourceTree = "<group>"; };
+		937E42CF19CEA17100F69DB9 /* PreferencesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTableViewCell.m; sourceTree = "<group>"; };
 		93B29A1719CD25E400E27544 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		93B29A1819CD25E400E27544 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		93B29A1C19CD261500E27544 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
@@ -55,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937E42AD19CE1AD600F69DB9 /* QuickLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +110,8 @@
 			children = (
 				93679E6119CD1AC9000FF2B3 /* TruthTableViewController.h */,
 				93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */,
+				937E42C619CE94E400F69DB9 /* PreferencesTableViewController.h */,
+				937E42C719CE94E400F69DB9 /* PreferencesTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -89,6 +119,18 @@
 		9343000219CD69E80046243F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				937E42B719CE325100F69DB9 /* TruthTableInputAccessoryView.xib */,
+				937E42BF19CE7F0000F69DB9 /* TruthTableInputAccessoryView.h */,
+				937E42C019CE7F0000F69DB9 /* TruthTableInputAccessoryView.m */,
+				937E42B919CE741F00F69DB9 /* UITextField+Shake.h */,
+				937E42BA19CE741F00F69DB9 /* UITextField+Shake.m */,
+				937E42BC19CE7ACD00F69DB9 /* UITextField+Cursor.h */,
+				937E42BD19CE7ACD00F69DB9 /* UITextField+Cursor.m */,
+				937E42C919CE964E00F69DB9 /* UISegmentedControl+SetSegments.h */,
+				937E42CA19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m */,
+				937E42CC19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib */,
+				937E42CE19CEA17100F69DB9 /* PreferencesTableViewCell.h */,
+				937E42CF19CEA17100F69DB9 /* PreferencesTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -96,6 +138,7 @@
 		93679E2A19CD1A30000FF2B3 = {
 			isa = PBXGroup;
 			children = (
+				937E42AC19CE1AD600F69DB9 /* QuickLook.framework */,
 				93679E3519CD1A30000FF2B3 /* Truth */,
 				93679E4F19CD1A30000FF2B3 /* TruthTests */,
 				93679E3419CD1A30000FF2B3 /* Products */,
@@ -117,6 +160,7 @@
 				93679E3A19CD1A30000FF2B3 /* AppDelegate.h */,
 				93679E3B19CD1A30000FF2B3 /* AppDelegate.m */,
 				93679E5F19CD1AA8000FF2B3 /* Main.storyboard */,
+				937E42C219CE8B7900F69DB9 /* Model */,
 				9343000219CD69E80046243F /* Views */,
 				930F9D5919CD5DAF00CA9D12 /* Controllers */,
 				930F9D5819CD3A6800CA9D12 /* Objective-C++ */,
@@ -152,6 +196,15 @@
 				93679E5119CD1A30000FF2B3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		937E42C219CE8B7900F69DB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				937E42C319CE8B8600F69DB9 /* Preferences.h */,
+				937E42C419CE8B8600F69DB9 /* Preferences.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		93B29A1B19CD25FD00E27544 /* C++ */ = {
@@ -248,7 +301,9 @@
 			files = (
 				93679E6019CD1AA8000FF2B3 /* Main.storyboard in Resources */,
 				93679E4719CD1A30000FF2B3 /* LaunchScreen.xib in Resources */,
+				937E42B819CE325100F69DB9 /* TruthTableInputAccessoryView.xib in Resources */,
 				93679E4419CD1A30000FF2B3 /* Images.xcassets in Resources */,
+				937E42CD19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937E42D019CEA17100F69DB9 /* PreferencesTableViewCell.m in Sources */,
 				930F9D5119CD38B200CA9D12 /* AppDelegate.m in Sources */,
+				937E42BE19CE7ACD00F69DB9 /* UITextField+Cursor.m in Sources */,
+				937E42C519CE8B8600F69DB9 /* Preferences.m in Sources */,
+				937E42CB19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m in Sources */,
 				930F9D5219CD38B200CA9D12 /* TruthTableViewController.m in Sources */,
 				930F9D5719CD397C00CA9D12 /* TruthTable.mm in Sources */,
 				930F9D5419CD38B200CA9D12 /* main.m in Sources */,
+				937E42BB19CE741F00F69DB9 /* UITextField+Shake.m in Sources */,
+				937E42C819CE94E400F69DB9 /* PreferencesTableViewController.m in Sources */,
+				937E42C119CE7F0000F69DB9 /* TruthTableInputAccessoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +447,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/michaelsnowden/Documents/Frameworks,
+				);
 				INFOPLIST_FILE = Truth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/michaelsnowden/Documents/Frameworks,
+				);
 				INFOPLIST_FILE = Truth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

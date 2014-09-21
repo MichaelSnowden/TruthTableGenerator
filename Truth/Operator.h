@@ -30,7 +30,7 @@ enum Associativity {
 template<class T>
 class Node;
 
-typedef function<bool (bool [])> LogicalOperation;
+typedef function<bool (bool lhs, bool rhs)> LogicalOperation;
 typedef function<void (Node<string> *)> TraversalLambda;
 typedef int Precedence;
 
@@ -51,16 +51,26 @@ private:
     
 };
 
-const static Operator NOT_PREFIX(1, Unary, RightLeft, [](bool op []) -> bool { return !op[0]; });
-const static Operator NOT_POSTFIX(1, Unary, LeftRight, [](bool op []) -> bool { return !op[0]; });
-const static Operator AND(2, Binary, LeftRight, [](bool op []) -> bool { return op[0] && op[1]; });
-const static Operator  OR(3, Binary, LeftRight, [](bool op []) -> bool { return op[0] || op[1]; });
+const static Operator  NOT_PREFIX(1,  Unary, RightLeft, [](bool lhs, bool rhs) -> bool { return !rhs;           });
+const static Operator NOT_POSTFIX(1,  Unary, LeftRight, [](bool lhs, bool rhs) -> bool { return !lhs;           });
+const static Operator         AND(2, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return lhs && rhs;     });
+const static Operator        NAND(2, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return !(lhs && rhs);  });
+const static Operator          OR(3, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return lhs || rhs;     });
+const static Operator         NOR(3, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return !(lhs || rhs);  });
+const static Operator         XOR(3, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return lhs != rhs;     });
+const static Operator          IF(4, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return !lhs || rhs;    });
+const static Operator         IFF(5, Binary, LeftRight, [](bool lhs, bool rhs) -> bool { return lhs == rhs;     });
 
-const static map<string, Operator>operatorMap = {
-    {"!", NOT_PREFIX}, {"~", NOT_PREFIX},
+const static map<string, Operator> operatorMap = {
+    {"!", NOT_PREFIX}, {"~", NOT_PREFIX}, {"¬", NOT_PREFIX},
     {"'", NOT_POSTFIX},
-    {"^", AND}, {"&", AND}, {"*", AND},
-    {"|", OR}, {"+", OR}
+    {"^", AND}, {"∧", AND}, {"&", AND}, {"*", AND}, {"•", AND},
+    {"|", NAND}, {"⊼", NAND},
+    {"+", OR}, {"∨", OR},
+    {"-", NOR}, {"↓", NOR}, {"⊽", NOR},
+    {"⊕", XOR}, {"⊻", XOR},
+    {"⇒", IF}, {"→", IF}, {"⊃", IF},
+    {"⇔", IFF}, {"≡", IFF}, {"=", IFF}
 };
 
 Operator::Operator(string s) : precedence(operatorMap.at(s).precedence), arity(operatorMap.at(s).arity), associativity(operatorMap.at(s).associativity), operation(operatorMap.at(s).operation), stringRepresentation(s) {}

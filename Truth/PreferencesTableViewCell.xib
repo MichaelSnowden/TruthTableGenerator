@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="i3f-Rl-rv0" customClass="PreferencesTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3f-Rl-rv0" id="bRK-l9-GJ1">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ms-VD-Tnh">
+                        <rect key="frame" x="189" y="8" width="123" height="29"/>
+                        <segments>
+                            <segment title="First"/>
+                            <segment title="Second"/>
+                        </segments>
+                        <connections>
+                            <action selector="segmentChanged:" destination="i3f-Rl-rv0" eventType="valueChanged" id="GEu-UY-fLM"/>
+                        </connections>
+                    </segmentedControl>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hB-QU-ByS">
+                        <rect key="frame" x="8" y="11" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3hB-QU-ByS" firstAttribute="leading" secondItem="bRK-l9-GJ1" secondAttribute="leadingMargin" id="Vko-UV-gvR"/>
+                    <constraint firstItem="8ms-VD-Tnh" firstAttribute="trailing" secondItem="bRK-l9-GJ1" secondAttribute="trailingMargin" id="YG1-AY-y3L"/>
+                    <constraint firstAttribute="centerY" secondItem="3hB-QU-ByS" secondAttribute="centerY" constant="0.5" id="kl5-vb-EYX"/>
+                    <constraint firstAttribute="centerY" secondItem="8ms-VD-Tnh" secondAttribute="centerY" id="xua-6l-4Cg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="3hB-QU-ByS" id="CWX-m4-0Lc"/>
+                <outlet property="segmentedControl" destination="8ms-VD-Tnh" id="RHq-AB-ZWJ"/>
+            </connections>
+            <point key="canvasLocation" x="458" y="214"/>
+        </tableViewCell>
+    </objects>
+</document>

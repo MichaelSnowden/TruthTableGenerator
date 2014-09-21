@@ -17,6 +17,26 @@
 
 using namespace std;
 
+bool is_constant(const string &str) {
+    return str.find_first_not_of("0123456789TF") == string::npos;
+}
+
+bool constant_to_value(const string &s) {
+    if (s == "0" || s == "F") {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+string constant_to_string(const string &s) {
+    if (s == "0" || s == "F") {
+        return "F";
+    } else {
+        return "T";
+    }
+}
+
 class Expression : public Node<string> {
     
 public:
@@ -81,31 +101,31 @@ public:
         lambda(this);
     }
     
-    bool evaluate(map<string, bool> &m) {
+    bool evaluate(map<string, bool> &m, string &s) {
         bool lhs = false;
         bool rhs = false;
         
         if (llink != NULL) {
-            lhs = ((Expression *)llink)->evaluate(m);
+            lhs = ((Expression *)llink)->evaluate(m, s);
         }
         if (rlink != NULL) {
-            rhs = ((Expression *)rlink)->evaluate(m);
+            rhs = ((Expression *)rlink)->evaluate(m, s);
         }
         if (llink != NULL || rlink != NULL) {
             auto op = Operator(data);
-            bool operands[2] = {lhs, rhs};
-            bool result = op.operation(operands);
-            int len = express().length() + 2;   // The 2 is for ", "
-            int l1 = len / 2;
-            int l2 = len - l1;
+            bool result = op.operation(lhs, rhs);
             
-            cout << setw(l1) << result << setw(l2) << " ";
+            s.append((result == true) ? "T, " : "F, " );
             return result;
         } else {
-            return m[data];
+            if (is_constant(data)) {
+                bool result = constant_to_value(data);
+                s.append(constant_to_string(data));
+                return result;
+            } else {
+                return m[data];
+            }
         }
-        
-        return false;
     }
 };
 

@@ -24,8 +24,12 @@
 
 using namespace std;
 
-bool isoperand(string s) {
-    return isalpha(s[0]) || isdigit(s[0]);
+bool isoperand(const string &str) {
+    return str.find_first_not_of("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") == string::npos;
+}
+
+bool isconstant(const string &str) {
+    return str.find_first_not_of("0123456789TF") == string::npos;
 }
 
 bool isoperator(string s) {
@@ -40,20 +44,28 @@ public:
 class BinaryExpressionTree : public BinaryTree<string> {
 public:
     BinaryExpressionTree() : BinaryTree<string>() {}
-    BinaryExpressionTree(string s) : BinaryTree<string>() {
+    BinaryExpressionTree(vector<string> s) : BinaryTree<string>() {
+        
         // Tokenize everything
         vector<string> tokens;
         
-        // Remove whitespace
-        s.erase(remove_if(s.begin(), s.end(), ::isspace), s.end());
-        
         // Insert tokens
+        // TODO: Handle cases like x'x and x!x
+        
         for (auto it = s.begin(); it != s.end(); ++it) {
-            char token = *it;
-            if (isalpha(token) && tokens.size() > 0 && isalpha(tokens.back()[0])) {
-                tokens.push_back("*");
+            string token = *it;
+            // Insert implicit anding
+            if (
+                            // This occurs in cases like xy. We want x^y
+                (isoperand(token) && !tokens.empty() && isoperand(tokens.back())) ||
+                            // This occurs in a case like x!y, where ! is the token, and x is the last token. We want x^!y
+                (isoperator(token) && Operator(token).arity == Unary && Operator(token).associativity == RightLeft && !tokens.empty() && isoperand(tokens.back())) ||
+                            // The final case is something like x~y, where y is the token, and x is the last token. We want x~^y
+                (isoperand(token) && !tokens.empty() && isoperator(tokens.back()) && Operator(tokens.back()).arity == Unary && Operator(tokens.back()).associativity == LeftRight)){
+                
+                tokens.push_back("^");
             }
-            tokens.push_back(string(1, token));
+            tokens.push_back(string(token));
         }
         
         // Build the tree from the tokens
@@ -142,10 +154,10 @@ public:
                 
                 operators.push(token);
             }
-            else if (token[0] == '(') {
+            else if (token == "(") {
                 operators.push(token);
             }
-            else if (token[0] == ')') {
+            else if (token == ")") {
                 while (!operators.empty() && operators.top() != "(") {
                     eatoperator();
                 }
@@ -161,6 +173,9 @@ public:
         
         while (!operators.empty()) {
             eatoperator();
+        }
+        if (operands.size() > 1) {
+            throw BinaryExpressionTreeException("Too few operands");
         }
         
         root = operands.top();

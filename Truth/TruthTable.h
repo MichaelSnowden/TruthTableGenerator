@@ -8,8 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class TruthTable;
+
+@protocol TruthTableDelegate
+
+- (void)truthTable:(TruthTable *) truthTable didSaveExcelToFilePath:(NSString *) filePath;
+
+@end
+
 @interface TruthTable : NSObject
 
-- (id)initWithString:(NSString *)s;
+- (id)initWithString:(NSString *)s delegate:(id<TruthTableDelegate>) delegate;
+
+@property (nonatomic, strong) id<TruthTableDelegate> delegate;
 
 @end

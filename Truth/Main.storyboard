@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bz-jp-oQm">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Truth Table View Controller-->
@@ -113,27 +113,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="G3a-e3-KUB" secondAttribute="bottom" constant="0.5" id="1BG-jf-6n2"/>
-                                        <constraint firstItem="G3a-e3-KUB" firstAttribute="trailing" secondItem="mXg-6Y-hGd" secondAttribute="trailingMargin" id="Bm8-wc-e2M"/>
-                                        <constraint firstItem="G3a-e3-KUB" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="MwO-U9-TI8"/>
-                                        <constraint firstItem="s0E-GC-fbW" firstAttribute="top" secondItem="mXg-6Y-hGd" secondAttribute="topMargin" id="YJM-5B-0l3"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="G3a-e3-KUB" secondAttribute="bottom" constant="1.5" id="cLO-aW-yqM"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="neW-Sq-We8" secondAttribute="bottom" constant="0.5" id="eog-1g-obL"/>
-                                        <constraint firstItem="neW-Sq-We8" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="iNn-Iv-3Ok"/>
-                                        <constraint firstItem="s0E-GC-fbW" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="jcz-fm-uwG"/>
-                                        <constraint firstItem="neW-Sq-We8" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="jwb-oU-Hau"/>
-                                        <constraint firstAttribute="centerX" secondItem="neW-Sq-We8" secondAttribute="centerX" constant="271" id="pSa-n9-CJs"/>
-                                        <constraint firstAttribute="centerY" secondItem="neW-Sq-We8" secondAttribute="centerY" constant="-0.25" id="yrX-XJ-gAf"/>
+                                        <constraint firstItem="s0E-GC-fbW" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leading" constant="8" id="1mr-vt-RAv"/>
+                                        <constraint firstAttribute="bottom" secondItem="G3a-e3-KUB" secondAttribute="bottom" constant="9" id="Re3-H5-FHx"/>
+                                        <constraint firstItem="neW-Sq-We8" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leading" constant="8" id="XYn-t4-AZb"/>
+                                        <constraint firstAttribute="centerY" secondItem="neW-Sq-We8" secondAttribute="centerY" constant="-0.5" id="sKX-9f-mnN"/>
+                                        <constraint firstItem="s0E-GC-fbW" firstAttribute="top" secondItem="mXg-6Y-hGd" secondAttribute="top" constant="8" id="ub9-Og-TZS"/>
+                                        <constraint firstItem="G3a-e3-KUB" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leading" constant="8" id="zzE-Wf-57H"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="eog-1g-obL"/>
-                                            <exclude reference="jwb-oU-Hau"/>
-                                            <exclude reference="pSa-n9-CJs"/>
-                                            <exclude reference="Bm8-wc-e2M"/>
-                                            <exclude reference="cLO-aW-yqM"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contingencyLabel" destination="neW-Sq-We8" id="1zx-lE-4Lb"/>

@@ -26,7 +26,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
     self.tableView.rowHeight = 44.f;
     
-    _operatorKeys = [[[Preferences sharedPreferences] dictionary] allKeys];
+    _operatorKeys = @[kNotOperatorKey, kAndOperatorKey, kNandOperatorKey, kOrOperatorKey, kNorOperatorKey, kXorOperatorKey, kIfOperatorKey, kIffOperatorKey];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([PreferencesTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"Cell"];
 }
 

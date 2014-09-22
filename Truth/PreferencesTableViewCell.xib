@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -31,9 +31,9 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3hB-QU-ByS" firstAttribute="leading" secondItem="bRK-l9-GJ1" secondAttribute="leadingMargin" id="Vko-UV-gvR"/>
-                    <constraint firstItem="8ms-VD-Tnh" firstAttribute="trailing" secondItem="bRK-l9-GJ1" secondAttribute="trailingMargin" id="YG1-AY-y3L"/>
-                    <constraint firstAttribute="centerY" secondItem="3hB-QU-ByS" secondAttribute="centerY" constant="0.5" id="kl5-vb-EYX"/>
+                    <constraint firstAttribute="centerY" secondItem="3hB-QU-ByS" secondAttribute="centerY" constant="0.25" id="7eE-W1-ca8"/>
+                    <constraint firstItem="3hB-QU-ByS" firstAttribute="leading" secondItem="bRK-l9-GJ1" secondAttribute="leading" constant="8" id="Lcr-ab-lkk"/>
+                    <constraint firstAttribute="trailing" secondItem="8ms-VD-Tnh" secondAttribute="trailing" constant="8" id="bhN-Q9-g6M"/>
                     <constraint firstAttribute="centerY" secondItem="8ms-VD-Tnh" secondAttribute="centerY" id="xua-6l-4Cg"/>
                 </constraints>
             </tableViewCellContentView>

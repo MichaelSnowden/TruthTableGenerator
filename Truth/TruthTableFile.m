@@ -56,7 +56,7 @@ NSString *const kFileNumPropositionsKey = @"NumPropositions";
     NSString *documentPath =
     [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
     NSString *filePath = [documentPath stringByAppendingPathComponent:
-                          [NSString stringWithFormat:@"TruthTable%i.csv", [files count]]];
+                          [NSString stringWithFormat:@"TruthTable-%i.csv", [files count] + 1]];
     
     NSError *error;
     [file.csv writeToFile:filePath atomically:NO encoding:NSUTF8StringEncoding error:&error];

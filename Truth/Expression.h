@@ -120,7 +120,6 @@ public:
         } else {
             if (is_constant(data)) {
                 bool result = constant_to_value(data);
-                s.append(constant_to_string(data));
                 return result;
             } else {
                 return m[data];

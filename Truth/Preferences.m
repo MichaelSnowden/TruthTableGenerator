@@ -43,7 +43,7 @@ NSString *const kDictionaryKey   = @"dictionary";
                                kAndOperatorKey : @[@"^", @"∧", @"&", @"*"],
                                kNandOperatorKey : @[@"|", @"⊼"],
                                kOrOperatorKey : @[@"+", @"∨"],
-                               kNorOperatorKey : @[@"-", @"↓", @"⊽"],
+                               kNorOperatorKey : @[@"↓", @"⊽"],
                                kXorOperatorKey : @[@"⊕", @"⊻"],
                                kIfOperatorKey : @[@"⇒", @"→", @"⊃"],
                                kIffOperatorKey : @[@"⇔", @"≡", @"="]
@@ -83,6 +83,7 @@ NSString *const kDictionaryKey   = @"dictionary";
 
 + (void)savePreferences {
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:[Preferences sharedPreferences]] forKey:kPreferencesKey];
+    [[[Preferences sharedPreferences] delegate] preferencesDidSave];
 }
 
 @end

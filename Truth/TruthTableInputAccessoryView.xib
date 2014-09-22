@@ -11,6 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <items>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="MzO-2k-Ew3"/>
                 <barButtonItem title="¬" id="cEf-ZD-sZ7">
                     <connections>
                         <action selector="buttonWasPressed:" destination="eGH-Eq-aFa" id="ucF-cJ-XYq"/>
@@ -71,6 +72,7 @@
                         <action selector="buttonWasPressed:" destination="eGH-Eq-aFa" id="Su1-So-dMz"/>
                     </connections>
                 </barButtonItem>
+                <barButtonItem style="plain" systemItem="flexibleSpace" id="6HM-yi-0h6"/>
             </items>
             <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>

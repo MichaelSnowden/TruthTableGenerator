@@ -67,7 +67,7 @@ const static map<string, Operator> operatorMap = {
     {"^", AND}, {"∧", AND}, {"&", AND}, {"*", AND}, {"•", AND},
     {"|", NAND}, {"⊼", NAND},
     {"+", OR}, {"∨", OR},
-    {"-", NOR}, {"↓", NOR}, {"⊽", NOR},
+    {"↓", NOR}, {"⊽", NOR},
     {"⊕", XOR}, {"⊻", XOR},
     {"⇒", IF}, {"→", IF}, {"⊃", IF},
     {"⇔", IFF}, {"≡", IFF}, {"=", IFF}

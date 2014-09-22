@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kDictionaryKey;
+
 extern NSString *const kNotOperatorKey;
 extern NSString *const kAndOperatorKey;
 extern NSString *const kNandOperatorKey;
@@ -17,9 +19,17 @@ extern NSString *const kXorOperatorKey;
 extern NSString *const kIfOperatorKey;
 extern NSString *const kIffOperatorKey;
 
+@class Preferences;
+@protocol PreferencesDelegate
+
+- (void)preferencesDidSave;
+
+@end
+
 @interface Preferences : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSMutableDictionary *dictionary;
+@property id<PreferencesDelegate> delegate;
 
 + (NSDictionary *) allOperatorSymbols;
 + (Preferences *) sharedPreferences;

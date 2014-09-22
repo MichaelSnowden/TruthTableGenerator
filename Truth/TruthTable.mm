@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TruthTable.h"
+#import "TruthTableFile.h"
 #import "Node.h"
 #include "BinaryExpressionTree.h"
 #include <algorithm>
@@ -28,6 +29,9 @@ using namespace std;
 - (id)initWithString:(NSString *)s delegate:(id<TruthTableDelegate>)delegate {
     if (self = [super init]) {
         _delegate = delegate;
+        
+        NSUInteger numTruths = 0;
+        NSUInteger numPropositions;
         
         s = [s stringByReplacingOccurrencesOfString:@" " withString:@""];
         auto expression = string([s UTF8String]);
@@ -72,7 +76,8 @@ using namespace std;
         }
         
         // Start organizing the table
-        int numRows = pow(2, sortedVariables.size());
+        int numRows = 1 << sortedVariables.size();
+        numPropositions = numRows;
         
         // Print out the first row
         for (auto it = sortedVariables.begin(); it != sortedVariables.end(); ++it) {
@@ -105,32 +110,22 @@ using namespace std;
             }
             
             for (int j = 0; j < sortedVariables.size(); ++j) {
-                [csv appendFormat:@"%c, ", [substring characterAtIndex:j]];
+                [csv appendFormat:@"%c, ", ([substring characterAtIndex:j] == '1') ? 'T' : 'F'];
             }
             // This line will print out all the subexpression values
-            string s2 = "";
-            ((Expression *)_tree->root)->evaluate(m, s2);
-            [csv appendString:[NSString stringWithCString:s2.c_str() encoding:NSUTF8StringEncoding]];
-            if (s2.size() >= 2) {
+            string evaluationString;
+            numTruths += ((Expression *)_tree->root)->evaluate(m, evaluationString);
+            
+            [csv appendString:[NSString stringWithCString:evaluationString.c_str() encoding:NSUTF8StringEncoding]];
+            if ([csv length] >= 2) {
                 [csv deleteCharactersInRange:NSMakeRange(csv.length - 2, 2)];
                 [csv appendString:@"\n"];
             }
         }
         
-        
-        NSString *documentPath =
-        [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
-        NSString *filePath = [documentPath stringByAppendingPathComponent:@"TruthTable.csv"];
-        
-        NSError *error;
-        [csv writeToFile:filePath atomically:NO encoding:NSUTF8StringEncoding error:nil];
-        if (error != nil) {
-            NSLog(@"Error: %@", error);
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error saving file" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
-        } else {
-            [_delegate truthTable:self didSaveExcelToFilePath:filePath];
-        }
+        TruthTableFile *file = [[TruthTableFile alloc] initWithExpression:s CSV:csv numTruths:numTruths numPropositions:numPropositions];
+
+        [_delegate truthTable:self didCreateFile:file];
     }
     return self;
 }

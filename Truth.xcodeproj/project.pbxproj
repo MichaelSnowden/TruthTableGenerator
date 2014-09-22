@@ -11,6 +11,7 @@
 		930F9D5219CD38B200CA9D12 /* TruthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */; };
 		930F9D5419CD38B200CA9D12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E3819CD1A30000FF2B3 /* main.m */; };
 		930F9D5719CD397C00CA9D12 /* TruthTable.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930F9D5619CD397C00CA9D12 /* TruthTable.mm */; };
+		9335921319CF9A71007638AE /* TruthTableFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9335921219CF9A71007638AE /* TruthTableFile.m */; };
 		93679E4419CD1A30000FF2B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93679E4319CD1A30000FF2B3 /* Images.xcassets */; };
 		93679E4719CD1A30000FF2B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93679E4519CD1A30000FF2B3 /* LaunchScreen.xib */; };
 		93679E5319CD1A30000FF2B3 /* TruthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93679E5219CD1A30000FF2B3 /* TruthTests.m */; };
@@ -25,6 +26,8 @@
 		937E42CB19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42CA19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m */; };
 		937E42CD19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937E42CC19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib */; };
 		937E42D019CEA17100F69DB9 /* PreferencesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 937E42CF19CEA17100F69DB9 /* PreferencesTableViewCell.m */; };
+		93E7E7D219CFEA7600BD38B0 /* FileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E7E7D119CFEA7600BD38B0 /* FileTableViewController.m */; };
+		93E7E7D519CFEC6000BD38B0 /* FileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E7E7D419CFEC6000BD38B0 /* FileTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 /* Begin PBXFileReference section */
 		930F9D5519CD397C00CA9D12 /* TruthTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TruthTable.h; sourceTree = "<group>"; };
 		930F9D5619CD397C00CA9D12 /* TruthTable.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TruthTable.mm; sourceTree = "<group>"; };
+		9335921119CF9A71007638AE /* TruthTableFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TruthTableFile.h; sourceTree = "<group>"; };
+		9335921219CF9A71007638AE /* TruthTableFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TruthTableFile.m; sourceTree = "<group>"; };
 		93679E3319CD1A30000FF2B3 /* Truth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93679E3719CD1A30000FF2B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93679E3819CD1A30000FF2B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,6 +80,10 @@
 		93B29A1819CD25E400E27544 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		93B29A1C19CD261500E27544 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
 		93B29A1D19CD273A00E27544 /* Operator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
+		93E7E7D019CFEA7600BD38B0 /* FileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTableViewController.h; sourceTree = "<group>"; };
+		93E7E7D119CFEA7600BD38B0 /* FileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTableViewController.m; sourceTree = "<group>"; };
+		93E7E7D319CFEC6000BD38B0 /* FileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTableViewCell.h; sourceTree = "<group>"; };
+		93E7E7D419CFEC6000BD38B0 /* FileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +121,8 @@
 				93679E6219CD1AC9000FF2B3 /* TruthTableViewController.m */,
 				937E42C619CE94E400F69DB9 /* PreferencesTableViewController.h */,
 				937E42C719CE94E400F69DB9 /* PreferencesTableViewController.m */,
+				93E7E7D019CFEA7600BD38B0 /* FileTableViewController.h */,
+				93E7E7D119CFEA7600BD38B0 /* FileTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +142,8 @@
 				937E42CC19CE9CEA00F69DB9 /* PreferencesTableViewCell.xib */,
 				937E42CE19CEA17100F69DB9 /* PreferencesTableViewCell.h */,
 				937E42CF19CEA17100F69DB9 /* PreferencesTableViewCell.m */,
+				93E7E7D319CFEC6000BD38B0 /* FileTableViewCell.h */,
+				93E7E7D419CFEC6000BD38B0 /* FileTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -203,6 +216,8 @@
 			children = (
 				937E42C319CE8B8600F69DB9 /* Preferences.h */,
 				937E42C419CE8B8600F69DB9 /* Preferences.m */,
+				9335921119CF9A71007638AE /* TruthTableFile.h */,
+				9335921219CF9A71007638AE /* TruthTableFile.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -321,12 +336,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E7E7D219CFEA7600BD38B0 /* FileTableViewController.m in Sources */,
 				937E42D019CEA17100F69DB9 /* PreferencesTableViewCell.m in Sources */,
 				930F9D5119CD38B200CA9D12 /* AppDelegate.m in Sources */,
 				937E42BE19CE7ACD00F69DB9 /* UITextField+Cursor.m in Sources */,
 				937E42C519CE8B8600F69DB9 /* Preferences.m in Sources */,
+				93E7E7D519CFEC6000BD38B0 /* FileTableViewCell.m in Sources */,
 				937E42CB19CE964E00F69DB9 /* UISegmentedControl+SetSegments.m in Sources */,
 				930F9D5219CD38B200CA9D12 /* TruthTableViewController.m in Sources */,
+				9335921319CF9A71007638AE /* TruthTableFile.m in Sources */,
 				930F9D5719CD397C00CA9D12 /* TruthTable.mm in Sources */,
 				930F9D5419CD38B200CA9D12 /* main.m in Sources */,
 				937E42BB19CE741F00F69DB9 /* UITextField+Shake.m in Sources */,
@@ -452,6 +470,7 @@
 					/Users/michaelsnowden/Documents/Frameworks,
 				);
 				INFOPLIST_FILE = Truth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -466,6 +485,7 @@
 					/Users/michaelsnowden/Documents/Frameworks,
 				);
 				INFOPLIST_FILE = Truth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

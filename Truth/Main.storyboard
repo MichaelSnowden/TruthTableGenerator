@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bz-jp-oQm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Truth Table View Controller-->
@@ -58,12 +59,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lZf-Mt-gjc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="WP0-8y-ayg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="WP0-8y-ayg">
                             <connections>
                                 <action selector="goToPreferences:" destination="48M-3D-TVf" id="HTa-U5-f23"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="lTg-40-ROh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="Md4-wc-53l">
+                            <connections>
+                                <segue destination="iiM-8p-hZj" kind="show" identifier="Files" id="EQS-YE-FfW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -72,7 +77,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6i0-Yp-AYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-61" y="612"/>
+            <point key="canvasLocation" x="-258" y="612"/>
+        </scene>
+        <!--File Table View Controller-->
+        <scene sceneID="Ddh-3j-AS1">
+            <objects>
+                <tableViewController id="iiM-8p-hZj" customClass="FileTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="KaN-cg-jp8">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="105" id="Tcf-9z-Lhz" customClass="FileTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tcf-9z-Lhz" id="mXg-6Y-hGd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0E-GC-fbW">
+                                            <rect key="frame" x="8" y="8" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3a-e3-KUB">
+                                            <rect key="frame" x="8" y="75" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neW-Sq-We8">
+                                            <rect key="frame" x="8" y="42.5" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="G3a-e3-KUB" secondAttribute="bottom" constant="0.5" id="1BG-jf-6n2"/>
+                                        <constraint firstItem="G3a-e3-KUB" firstAttribute="trailing" secondItem="mXg-6Y-hGd" secondAttribute="trailingMargin" id="Bm8-wc-e2M"/>
+                                        <constraint firstItem="G3a-e3-KUB" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="MwO-U9-TI8"/>
+                                        <constraint firstItem="s0E-GC-fbW" firstAttribute="top" secondItem="mXg-6Y-hGd" secondAttribute="topMargin" id="YJM-5B-0l3"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="G3a-e3-KUB" secondAttribute="bottom" constant="1.5" id="cLO-aW-yqM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="neW-Sq-We8" secondAttribute="bottom" constant="0.5" id="eog-1g-obL"/>
+                                        <constraint firstItem="neW-Sq-We8" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="iNn-Iv-3Ok"/>
+                                        <constraint firstItem="s0E-GC-fbW" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="jcz-fm-uwG"/>
+                                        <constraint firstItem="neW-Sq-We8" firstAttribute="leading" secondItem="mXg-6Y-hGd" secondAttribute="leadingMargin" id="jwb-oU-Hau"/>
+                                        <constraint firstAttribute="centerX" secondItem="neW-Sq-We8" secondAttribute="centerX" constant="271" id="pSa-n9-CJs"/>
+                                        <constraint firstAttribute="centerY" secondItem="neW-Sq-We8" secondAttribute="centerY" constant="-0.25" id="yrX-XJ-gAf"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="eog-1g-obL"/>
+                                            <exclude reference="jwb-oU-Hau"/>
+                                            <exclude reference="pSa-n9-CJs"/>
+                                            <exclude reference="Bm8-wc-e2M"/>
+                                            <exclude reference="cLO-aW-yqM"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contingencyLabel" destination="neW-Sq-We8" id="1zx-lE-4Lb"/>
+                                    <outlet property="dateLabel" destination="G3a-e3-KUB" id="qYb-OM-9Tf"/>
+                                    <outlet property="expressionLabel" destination="s0E-GC-fbW" id="Xxj-Ly-9Rh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iiM-8p-hZj" id="esO-5a-tvG"/>
+                            <outlet property="delegate" destination="iiM-8p-hZj" id="nR1-XG-6iU"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ool-EP-xqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gls-zs-ZEQ">

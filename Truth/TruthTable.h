@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @class TruthTable;
+@class TruthTableFile;
 
 @protocol TruthTableDelegate
 
-- (void)truthTable:(TruthTable *) truthTable didSaveExcelToFilePath:(NSString *) filePath;
+- (void)truthTable:(TruthTable *) truthTable didCreateFile:(TruthTableFile *)file;
 
 @end
 

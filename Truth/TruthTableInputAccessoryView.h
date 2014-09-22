@@ -16,10 +16,10 @@
 
 @end
 
-@interface TruthTableInputAccessoryView : UIToolbar
+@interface TruthTableInputAccessoryView : UIToolbar <UIInputViewAudioFeedback>
 
 @property (nonatomic, strong) id<TruthTableInputAccessoryViewDelegate> truthTableDelegate;
 
-- (void) loadPreferences;
+- (void)loadPreferences;
 
 @end

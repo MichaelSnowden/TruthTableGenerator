@@ -44,36 +44,10 @@ public:
 class BinaryExpressionTree : public BinaryTree<string> {
 public:
     BinaryExpressionTree() : BinaryTree<string>() {}
-    BinaryExpressionTree(vector<string> s) : BinaryTree<string>() {
-        
-        // Tokenize everything
-        vector<string> tokens;
-        
-        // Insert tokens
-        // TODO: Handle cases like x'x and x!x
-        
-        for (auto it = s.begin(); it != s.end(); ++it) {
-            string token = *it;
-            // Insert implicit anding
-            if (
-                            // This occurs in cases like xy. We want x^y
-                (isoperand(token) && !tokens.empty() && isoperand(tokens.back())) ||
-                            // This occurs in a case like x!y, where ! is the token, and x is the last token. We want x^!y
-                (isoperator(token) && Operator(token).arity == Unary && Operator(token).associativity == RightLeft && !tokens.empty() && isoperand(tokens.back())) ||
-                            // The final case is something like x~y, where y is the token, and x is the last token. We want x~^y
-                (isoperand(token) && !tokens.empty() && isoperator(tokens.back()) && Operator(tokens.back()).arity == Unary && Operator(tokens.back()).associativity == LeftRight)){
-                
-                tokens.push_back("^");
-            }
-            tokens.push_back(string(token));
-        }
-        
-        // Build the tree from the tokens
-        auto expression = tokens;
+    BinaryExpressionTree(vector<string> expression) : BinaryTree<string>() {
         
         stack<string> operators;
         stack<Expression *> operands;
-        subexpressions.clear();
         
         auto operator2comesfirst = [](Operator op1, Operator op2) {
             return (op2.precedence == op1.precedence && op1.associativity == LeftRight) || op2.precedence < op1.precedence;
